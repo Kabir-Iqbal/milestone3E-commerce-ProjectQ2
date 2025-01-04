@@ -94,13 +94,13 @@ async function Hero() {
         <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 lg:gap-2 my-14 lg:my-20 ${poppins.className} `} >
           {data.slice(0, 4).map((products: Product, index: number) => (
             <Link key={index} href={`/dynamicRoute/${products.slug}`} >
-              <div className="flex flex-col gap-3 w-[220px] h-[300px] sm:w-[287px] sm:h-[397px] px-8 sm:px-4 md:px-2 " >
+              <div className="flex flex-col gap-4  h-[300px] sm:w-[287px] sm:h-[397px]  sm:px-4 md:px-2 " >
                 <div className=" w-full h-[287px] " >
                   <Image className=" h-full w-full "
                     src={products.image} alt={products.heading} width={255} height={200} />
                 </div>
-                <h2 className="text-[16px] leading-[24px] px-2 " > {products.heading} </h2>
-                <p className="font-semibold text-[24px] leading-[34px] px-2 " > {` Rs.${products.price}`} </p>
+                <h2 className=" text-[14px] sm:text-[16px] leading-[24px] md:px-2 " > {products.heading} </h2>
+                <p className="font-semibold text-[18px] md:text-[24px] leading-[34px] px-2 " > {` Rs.${products.price}`} </p>
               </div>
             </Link>
           ))}

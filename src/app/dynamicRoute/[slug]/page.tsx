@@ -62,9 +62,9 @@ async function Page(params: Params) {
 
                 <div>
                     {data.map((products: Product , index : number ) => (
-                        <div key={index} className="flex gap-10 my-12 " >
+                        <div key={index} className="flex flex-col md:flex-row gap-10 my-12 " >
                             {/* right side */}
-                            <div className="bg-[#FFF9E5] w-[481px] h-[500px] flex-1  " >
+                            <div className="bg-[#FFF9E5] w-[90%] mx-auto h-[350px] sm:[380px] md:h-[400px] lg:w-[481px] lg:h-[500px] flex-1  " >
                                 <Image className=" w-full h-[381px]"
                                     src={products.image} alt={products.heading} height={380} width={480} />
                             </div>
@@ -72,7 +72,7 @@ async function Page(params: Params) {
 
                             {/* left side */}
                             <div className="flex-1" >
-                                <h1 className="text-[42px] leading-[63px] " >{products.heading} </h1>
+                                <h1 className=" text-[28px] leading-[38px] md:text-[42px] my-2 my:my-0 md:leading-[63px] " >{products.heading} </h1>
                                 <p className="text-[#9F9F9F] text-[24px] leading-[36px] " > {`Rs ${products.price} `} </p>
 
                                 <div className="flex gap-5 h-[30px] items-center my-5 " >
@@ -107,13 +107,13 @@ async function Page(params: Params) {
                                     </div>
 
                                     <div className="flex gap-5 my-8 " >
-                                        <div className="flex border-[#9F9F9F] border-[1px] items-center justify-between px-3 w-[123px] h-[64px] rounded-lg ">
+                                        <div className="flex border-[#9F9F9F] border-[1px] items-center justify-between px-3 w-[90px] h-[50px] md:w-[123px] md:h-[64px] rounded-lg ">
                                             <button> - </button>
                                             <p>1</p>
                                             <button> + </button>
                                         </div>
 
-                                        <div className="w-[215px] h-[64px] items-center text-center rounded-2xl border-[1px] border-black " >
+                                        <div className=" w-[150px] h-[50px] md:w-[215px] md:h-[64px] items-center text-center rounded-2xl border-[1px] border-black " >
                                             <button className="w-full h-full " > Add To Cart  </button>
                                         </div>
                                     </div>
@@ -126,13 +126,13 @@ async function Page(params: Params) {
 
                 <hr className="text-[#FFFFFF] w-full my-2 mb-8 " />
 
-                <div className="flex gap-10 my-10 justify-center" >
-                    <p className="text-[24px] leading-[36px] font-semibold " >Description</p>
-                    <p className=" text-[24px] leading-[36px] text-[#9F9F9F] " >Additional Information</p>
-                    <p className=" text-[24px] leading-[36px] text-[#9F9F9F] " >Reviews [5]</p>
+                <div className="flex text-[12px] leading-[20px] sm:text-[15px] sm:leading-[25px] md:text-[20px] md:leading-[36px] gap-3 sm:gap-5 md:gap-10 my-10 justify-center text-[#9F9F9F]" >
+                    <p className=" text-black font-semibold">Description</p>
+                    <p>Additional Information</p>
+                    <p>Reviews [5]</p>
                 </div>
 
-                <div className="text-[16px] leading-[24px] text-[#9F9F9F] grid gap-8 my-5 px-20 " >
+                <div className=" text-[12px] leading-[20px] md:text-[16px] md:leading-[24px] text-[#9F9F9F] grid gap-8 my-5 px-2 sm:px-5 md:px-9 lg:px-20 " >
                     <p>Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable
                         look and sound of Marshall, unplugs the chords, and takes the show on the road.</p>
 
@@ -143,13 +143,13 @@ async function Page(params: Params) {
                         personal preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
                 </div>
 
-                <div className="flex gap-10 my-12 " >
-                    <div className="flex-1 h-[348px] flex items-center bg-[#FFF9E5] " >
+                <div className="flex gap-10 my-12 h-[270px] sm:h-[290px] md:h-[348px] " >
+                    <div className="flex-1 h-full flex items-center bg-[#FFF9E5] " >
                         <Image className="w-full  h-[250px] "
                             src="/images/mayursofa.png" alt="Mayur Sofa" height={200} width={300} />
                     </div>
 
-                    <div className="flex-1 h-[348px] flex items-center bg-[#FFF9E5] " >
+                    <div className="flex-1 h-full flex items-center bg-[#FFF9E5] " >
                         <Image className="w-full h-[250px] "
                             src="/images/cloudsofa.png" alt="Mayur Sofa" height={200} width={300} />
                     </div>
@@ -161,17 +161,18 @@ async function Page(params: Params) {
                {/* Getting data from sanity  */}
 
                 <div>
-                    <h1 className="text-[36px] leading-[54px] font-semibold  text-center mt-14 " >Related Products</h1>
-                    <div className={`grid grid-cols-4 gap-5   my-14 ${poppins.className} `} >
+                    <h1 className=" text-[30px] md:text-[36px] leading-[54px] font-semibold  text-center mt-14 " >Related Products</h1>
+
+                    <div className={`w-[99%] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-5 my-14 lg:my-20${poppins.className} `} >
                         {data2.slice(0, 4).map((products: Product, index: number) => (
                             <Link key={index} href={`/dynamicRoute/${products.slug}`} >
-                            <div className="flex flex-col gap-1 w-[287px] h-[397px]  " >
-                                <div className=" w-full h-[287px] " >
+                            <div className="flex flex-col gap-3  h-[300px] sm:w-[287px] sm:h-[397px]  sm:px-4 md:px-2  " >
+                                <div className=" w-full h-[287px]  " >
                                     <Image className=" h-full w-full "
                                         src={products.image} alt={products.heading} width={255} height={200} />
                                 </div>
-                                <h2 className="text-[16px] leading-[24px] px-2 " > {products.heading} </h2>
-                                <p className="font-semibold text-[24px] leading-[34px] px-2 " > {` Rs.${products.price}`} </p>
+                                <h2 className="text-[14px] sm:text-[16px] leading-[24px] md:px-2 " > {products.heading} </h2>
+                                <p className="font-semibold text-[18px] md:text-[24px] leading-[34px] px-2 " > {` Rs.${products.price}`} </p>
                             </div>
                          </Link>   
                         ))}
