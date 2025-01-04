@@ -179,8 +179,8 @@ async function Hero() {
       {/* background image-section */}
       <div className="relative w-full h-[450px]" >
         <div className=" absolute inset-0 w-full h-[450px] bg-custom opacity-50 " > </div>
-        <div className={`w-[454px] h-[202] mx-auto relative py-24 ${poppins.className} `} >
-          <h2 className="font-semibold text-[33px] leading-[50px] md:text-[40px] md:leading-[70px] lg:text-[60px] lg:leading-[90px] text-center " >Our Instagram</h2>
+        <div className={` md:w-[454px] h-[202] mx-auto relative py-24 ${poppins.className} `} >
+          <h2 className="font-semibold text-[33px] leading-[50px] md:text-[40px] md:leading-[70px] lg:text-[60px] lg:leading-[90px] text-center">Our Instagram</h2>
           <p className="text-center text-[16px] leading-[24px] md:text-[18px] md:leading-[28px] lg:text-[20px] lg:leading-[30px] " >Follow our store on Instagram</p>
           <div className="text-center mt-4 ">
             <button className=" text[16px] leading-[24px] md:text-[18px] md:leading-[28px] lg:text[20px] lg:leading-[30px] " >Follow Us </button>
